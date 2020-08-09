@@ -237,7 +237,7 @@ header {
   color: var(--primary-white-color);
 }
 
-.hero-button {
+.mainbutton {
   display: inline-block;
   font-family: inherit;
   background-color: var(--accent-color);
@@ -256,7 +256,7 @@ header {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-button:hover {
+.mainbutton:hover {
   background-color: var(--secondary-accent-color);
 }
 
@@ -826,30 +826,45 @@ header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-
-.closebtn {
-  display: flex;
+.modal__button-close {
   position: absolute;
   top: 8px;
   right: 8px;
+
+  display: flex;
+  align-items: center;
+  padding: 0;
+
   width: 30px;
   height: 30px;
-  padding: 0;
   border-radius: 50%;
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.closebtn__icon {
-  width: 11px;
-  height: 11px;
+
+.modal__icon {
+  width: 18px;
+  height: 18px;
   margin: auto;
+
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .closebtn:hover .closebtn__icon,
 .closebtn:focus .closebtn__icon {
   fill: var(--accent-color);
+}
+
+.modal__invite {
+  display: block;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-headline);
 }
 
 .modal__form {
@@ -893,7 +908,7 @@ header {
 }
 
 .service-order__input:focus ~ .service-order__icon,
-.service-order__input:not(:placeholder-shown) ~ .order__icon {
+.service-order__input:not(:placeholder-shown) ~ .service-order__icon {
   fill: var(--accent-color);
 }
 .service-order__text,
@@ -908,8 +923,8 @@ header {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.service-order__label:focus-within .order__text,
-.checkbox-comments:focus-within .comments__text {
+.service-order__label:focus-within .service-order__text,
+.checkbox-comments:focus-within .checkbox-comments {
   transform: translate(-25px, -30px);
   font-size: 12px;
   line-height: 1.17;
@@ -917,8 +932,8 @@ header {
   color: var(--accent-color);
 }
 
-.service-order__input:not(:placeholder-shown) + .order__text,
-.checkbox-comments__area:not(:placeholder-shown) + .comments__text {
+.service-order__input:not(:placeholder-shown) + .service-order__text,
+.checkbox-comments__area:not(:placeholder-shown) + .checkbox-comments__text {
   transform: translate(-25px, -30px);
   font-size: 12px;
   line-height: 1.17;
@@ -943,11 +958,11 @@ header {
   margin-left: 16px;
 }
 
-.checkbox-comments:focus-within .comments__text {
+.checkbox-comments:focus-within .checkbox-comments__text {
   transform: translateY(-30px);
 }
 
-.checkbox-comments__area:not(:placeholder-shown) + .comments__text {
+.checkbox-comments__area:not(:placeholder-shown) + .checkbox-comments__text {
   transform: translateY(-30px);
 }
 
@@ -1012,5 +1027,5 @@ checkbox- .checkbox__input:checked + .checkbox__custom-made {
   font-size: 14px;
   line-height: 1.71px;
   text-decoration-line: underline;
-  color: #2196f3;
+  color: var(--accent-color);
 }
